@@ -493,7 +493,7 @@ async def callback_notif_status(callback: CallbackQuery):
         f"📊 <b>STATUS DAS NOTIFICAÇÕES</b>\n\n"
         f"👤 <b>NOVOS USUÁRIOS</b>\n"
         f"Status: {'🟢 Ativado' if usuarios_cfg['ativo'] else '🔴 Desativado'}\n"
-        f"Destino: {('Chat do Owner' if usuarios_cfg['destino'] == 'owner' else f\"Grupo {usuarios_cfg['valor']}\")}\n\n"
+        f"Destino: {destino_formatado}\n\n"
         f"💰 <b>VENDAS REALIZADAS</b>\n"
         f"Status: {'🟢 Ativado' if vendas_cfg['ativo'] else '🔴 Desativado'}\n"
         f"Grupo: {vendas_dados.get('group_id', '❌ Não configurado')}\n"
@@ -544,3 +544,4 @@ async def callback_notif_test(callback: CallbackQuery):
         await callback.answer("✅ Notificação de teste enviada!", show_alert=True)
     except Exception as e:
         await callback.answer(f"❌ Erro: {str(e)}", show_alert=True)
+
