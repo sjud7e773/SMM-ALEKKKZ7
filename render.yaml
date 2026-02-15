@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: smm-bot
-    runtime: docker
-    plan: free
-    rootDir: SMM PAINEL
-    envVars:
-      - key: BOT_TOKEN
-        sync: false
